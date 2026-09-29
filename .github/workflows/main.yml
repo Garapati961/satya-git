@@ -11,7 +11,7 @@ jobs:
                run:   echo "hello satya"
              - run : echo "iam learning github actions"
              - name: git version
-               run : git --v
+               run : git -version
              - name : mvn version
                run : mvn -version
              - run: pwd
