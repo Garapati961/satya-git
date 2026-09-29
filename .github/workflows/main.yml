@@ -9,3 +9,9 @@ jobs:
          steps:
              - name : fist task
                run:   echo "hello satya"
+             - run : ech "iam learning github actions"
+             - name: git version
+               run : git --v
+             - name : mvn version
+               run : mvn -version
+             - run: pwd
