@@ -4,7 +4,7 @@ on :
        branches:
            - main
 jobs:
-    print:
+    build-test:
          runs-on: ubuntu-latest
          steps:
              - name : fist task
@@ -15,3 +15,9 @@ jobs:
              - name : mvn version
                run : mvn --version
              - run: pwd
+             - name: SonarQube Analysis
+               run: |
+                mvn sonar:sonar \
+                -Dsonar.projectKey=my-maven-project \
+                -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
+                -Dsonar.token=${{ secrets.SONAR_TOKEN }}
